@@ -1,0 +1,35 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('LOANS');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.Customer.drop();
+
+// Insert a few documents into the sales collection.
+db.loan.insertMany([
+  {  'customername': 'EVA', 'phoneNumber': 842588,
+   'address': 'Mesa','loanAmount':220000 , 'intrest':4.5, 
+   'loanTermYears': 9, 'loanType': 'Personal Loan', 
+   'description': 'Eva has taken a Personal loan', 
+   'createdDate': new Date('2016-03-01T08:00:00Z'), 
+   'insertedDate': new Date(new Date().getTime()-(24*60*60-1000)) },
+{  'customername': 'Adam', 'phoneNumber': 787913, 'address': 'Florida','loanAmount':11400 , 'intrest':6, 'loanTermYears': 5, 'loanType': 'Education Loan', 'description': 'Allan has taken Education loan', 
+'createdDate': new Date('2015-03-01T08:00:00Z'), 'insertedDate': new Date(new Date().getTime()-(24*60*60-1000)) },
+  {  'customername': 'abc', 'phoneNumber': 7841777,
+   'address': 'Mesa','loanAmount':25000 , 'intrest':4.5, 
+   'loanTermYears': 9, 'loanType': 'Car Loan', 
+   'description': 'Car loan', 
+   'createdDate': new Date('2014-03-01T08:00:00Z'), 
+   'insertedDate': new Date(new Date().getTime()-(24*60*60-1000)) },
+{  'customername': 'Allan', 'phoneNumber': 787913, 'address': 'Tempe','loanAmount':15000 , 'intrest':9, 'loanTermYears': 5, 'loanType': 'Education Loan', 'description': 'Allan has taken Education loan', 
+'createdDate': new Date('2014-03-01T08:00:00Z'), 'insertedDate': new Date(new Date().getTime()-(24*60*60-1000)) },
+{ 'customername': 'Minda', 'phoneNumber': 81886, 'address': 'Phoenix','loanAmount':5000 , 'intrest':2.1, 'loanTermYears': 3, 'loanType': 'home Loan', 'description': 'Minda has taken loan', 
+'createdDate': new Date('2014-03-01T08:00:00Z'), 'insertedDate': new Date(new Date().getTime()-(24*60*60-1000)) },
+]);
+
+
