@@ -1,27 +1,24 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config({ path: './config.env' });
 const express = require('express');
 const mongoose = require('mongoose');
-const mongoString = process.env.DATABASE_URL;
+const DB = process.env.DATABASE.replace(
+    '<password>',
+    process.env.DATABASE_PASSWORD
+  );
   
-
-   // const mongoString = process.env.DATABASE.replace('jenil2704', process.env.DB_PASSWORD);
-
-
-
-mongoose.connect(mongoString);
-const database = mongoose.connection;
-
-database.on('error', (error) => {
-    console.log(error)
-})
-
-database.once('connected', () => {
-    console.log('Database Connected');
-})
+  mongoose
+    .connect(DB, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+      //useCreateIndex: true,
+      //useFindAndModify: false
+    })
+    .then(() => console.log('DB connection successful!'));
 const app = express();
 
 app.use(express.json());
 
 app.listen(3000, () => {
-    console.log(`Server Started at ${3000}`)
+    console.log(`App server running on ${3000}`)
 })
